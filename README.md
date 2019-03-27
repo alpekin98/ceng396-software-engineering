@@ -12,3 +12,4 @@ What we are going to do
 What we would do with more time
 * Create a web application
 * Create a specific device for each classes to read ID Cards instead of phones
+
