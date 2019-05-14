@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Software Project</string>
+    <string name="explanation"></string>
+
+    <string name="Lecture">Choose lecture</string>
+
+    <string-array name="Lectures">
+        <item>CENG111</item>
+        <item>CENG114</item>
+        <item>CENG124</item>
+        <item>CENG162</item>
+        <item>CENG198</item>
+        <item>CENG218</item>
+        <item>CENG222</item>
+        <item>CENG236</item>
+        <item>CENG241</item>
+        <item>CENG328</item>
+        <item>CENG356</item>
+        <item>CENG361</item>
+        <item>CENG382</item>
+        <item>CENG396</item>
+        <item>CENG407</item>
+        <item>CENG408</item>
+        <item>CENG440</item>
+        <item>CENG460</item>
+        <item>CENG464</item>
+        <item>CENG497</item>
+        <item>CENG499</item>
+        <item>CENG501</item>
+        <item>CENG572</item>
+        <item>CENG582</item>
+        <item>CENG590</item>
+        <item>CENG592</item>
+        <item>CENG599</item>
+        <item>CENG686</item>
+        <item>CENG690</item>
+        <item>CENG696</item>
+    </string-array>
+</resources>

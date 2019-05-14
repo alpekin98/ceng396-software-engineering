@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TeacherInfo">
+
+    <TextView
+        android:id="@+id/TeacherInfoTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Teacher Name"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/monday"
+        android:layout_width="82dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAccent"
+        android:text="MON"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/border2"
+        app:layout_constraintEnd_toStartOf="@+id/tuesday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/border3" />
+
+    <Button
+        android:id="@+id/tuesday"
+        android:layout_width="82dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAccent"
+        android:text="TUE"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/border2"
+        app:layout_constraintEnd_toStartOf="@+id/wednesday"
+        app:layout_constraintStart_toEndOf="@+id/monday"
+        app:layout_constraintTop_toBottomOf="@+id/border3" />
+
+    <Button
+        android:id="@+id/wednesday"
+        android:layout_width="82dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAccent"
+        android:text="WED"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/border2"
+        app:layout_constraintEnd_toStartOf="@+id/thursday"
+        app:layout_constraintStart_toEndOf="@+id/tuesday"
+        app:layout_constraintTop_toBottomOf="@+id/border3" />
+
+    <Button
+        android:id="@+id/thursday"
+        android:layout_width="82dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAccent"
+        android:text="Thurs"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/border2"
+        app:layout_constraintEnd_toStartOf="@+id/friday"
+        app:layout_constraintStart_toEndOf="@+id/wednesday"
+        app:layout_constraintTop_toBottomOf="@+id/border3" />
+
+    <Button
+        android:id="@+id/friday"
+        android:layout_width="84dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAccent"
+        android:text="FRIDAY"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/border2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/thursday"
+        app:layout_constraintTop_toBottomOf="@+id/border3" />
+
+    <TextView
+        android:id="@+id/Lectures"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Lectures"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/lecture3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/border" />
+
+    <TextView
+        android:id="@+id/lecture1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="20dp"
+        android:text="Lecture 1"
+        app:layout_constraintBottom_toTopOf="@+id/lecture2"
+        app:layout_constraintEnd_toStartOf="@+id/lecture3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/border" />
+
+    <TextView
+        android:id="@+id/lecture2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="30dp"
+        android:text="Lecture 2"
+        app:layout_constraintBottom_toTopOf="@+id/border3"
+        app:layout_constraintEnd_toStartOf="@+id/lecture4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lecture1" />
+
+    <TextView
+        android:id="@+id/lecture3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Lecture 3"
+        app:layout_constraintBottom_toTopOf="@+id/lecture4"
+        app:layout_constraintEnd_toStartOf="@+id/lecture5"
+        app:layout_constraintStart_toEndOf="@+id/lecture1"
+        app:layout_constraintTop_toBottomOf="@+id/Lectures" />
+
+    <TextView
+        android:id="@+id/lecture4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_marginBottom="30dp"
+        android:text="Lecture 4"
+        app:layout_constraintBottom_toTopOf="@+id/border3"
+        app:layout_constraintEnd_toStartOf="@+id/lecture6"
+        app:layout_constraintStart_toEndOf="@+id/lecture2"
+        app:layout_constraintTop_toBottomOf="@+id/lecture3" />
+
+    <TextView
+        android:id="@+id/lecture5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="20dp"
+        android:text="Lecture 5"
+        app:layout_constraintBottom_toTopOf="@+id/lecture6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lecture3"
+        app:layout_constraintTop_toBottomOf="@+id/border" />
+
+    <TextView
+        android:id="@+id/lecture6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="30dp"
+        android:text="Lecture 6"
+        app:layout_constraintBottom_toTopOf="@+id/border3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lecture4"
+        app:layout_constraintTop_toBottomOf="@+id/lecture5" />
+
+    <TextView
+        android:id="@+id/lectureName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lecture Name"
+        android:textColor="#000000"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/border5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/border4"
+        app:layout_constraintTop_toBottomOf="@+id/border2"
+        app:layout_constraintVertical_bias="0.060000002" />
+
+    <!-- Border -->
+    <TextView
+        android:id="@+id/border"
+        android:layout_width="420dp"
+        android:layout_height="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="8dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/Lectures"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TeacherInfoTV" />
+
+    <!-- Border -->
+    <TextView
+        android:id="@+id/border2"
+        android:layout_width="420dp"
+        android:layout_height="4dp"
+        android:layout_marginBottom="360dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Border -->
+    <TextView
+        android:id="@+id/border3"
+        android:layout_width="420dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="280dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Border -->
+    <TextView
+        android:id="@+id/border4"
+        android:layout_width="4dp"
+        android:layout_height="360dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="4dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/border2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monday" />
+
+    <!-- Border -->
+    <TextView
+        android:id="@+id/border5"
+        android:layout_width="420dp"
+        android:layout_height="4dp"
+        android:layout_marginBottom="280dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Border -->
+    <TextView
+        android:id="@+id/border6"
+        android:layout_width="420dp"
+        android:layout_height="4dp"
+        android:layout_marginBottom="320dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Border -->
+    <TextView
+        android:id="@+id/border7"
+        android:layout_width="420dp"
+        android:layout_height="4dp"
+        android:layout_marginBottom="240dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Border -->
+    <TextView
+        android:id="@+id/border8"
+        android:layout_width="420dp"
+        android:layout_height="4dp"
+        android:layout_marginBottom="200dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Border -->
+    <TextView
+        android:id="@+id/border9"
+        android:layout_width="420dp"
+        android:layout_height="4dp"
+        android:layout_marginBottom="160dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Border -->
+    <TextView
+        android:id="@+id/border10"
+        android:layout_width="420dp"
+        android:layout_height="4dp"
+        android:layout_marginBottom="120dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Border -->
+    <TextView
+        android:id="@+id/border11"
+        android:layout_width="420dp"
+        android:layout_height="4dp"
+        android:layout_marginBottom="80dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Border -->
+    <TextView
+        android:id="@+id/border12"
+        android:layout_width="420dp"
+        android:layout_height="4dp"
+        android:layout_marginBottom="40dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
