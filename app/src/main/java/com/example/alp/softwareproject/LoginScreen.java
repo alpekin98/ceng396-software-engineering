@@ -3,16 +3,13 @@ package com.example.alp.softwareproject;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginScreen extends AppCompatActivity {
 
-    Button btnHizliGir;
     Button btnLogin;
     Button btnForgotPassword;
     EditText etEmail;
@@ -27,7 +24,6 @@ public class LoginScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
 
-        btnHizliGir = findViewById(R.id.hizligir);
         btnLogin = findViewById(R.id.btnLogin);
         btnForgotPassword = findViewById(R.id.btnForgotPassword);
         etEmail = findViewById(R.id.etEmail);
@@ -39,13 +35,6 @@ public class LoginScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openInfoPage();
-            }
-        });
-
-        btnHizliGir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openMainMenu();
             }
         });
 
@@ -79,11 +68,6 @@ public class LoginScreen extends AppCompatActivity {
 
     public void openInfoPage(){
         Intent intent = new Intent(this,InfoPage.class);
-        startActivity(intent);
-    }
-
-    public void openMainMenu(){
-        Intent intent = new Intent(this,MainMenu.class);
         startActivity(intent);
     }
 }
