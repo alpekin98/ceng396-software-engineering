@@ -106,12 +106,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         close();
 
-        /**
-        Log.e("LELELELELELELELELEL","(" + selectionArgs[0] + ")" + "SelectionArgs username");
-        Log.e("LELELELELELELELELE","(" + selectionArgs[1] + ")" + "SelectionArgs Password");
-        Log.e("LELELELELLELELELELE", Integer.toString(count));
-        */
-
         if(count>0){
             return true;
         } else {
@@ -122,19 +116,68 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public String getTeacherName(String username,String password){
 
         db = openDatabase();
-        String selection = "Username=? and Password=?";
-        String TeacherName;
-        String[] columns = {"Teacher_Name"};
+
         String[] selectionArgs = {username,password};
-        Cursor cursor = db.query(USER_TABLE_ACCOUNTS,columns,selection,selectionArgs,null,null,null);
-        Log.e("LELELELELLELELELELE", "cursor.getCount" + cursor.getCount());
-        Log.e("LELELELELEEEEEEEEEEEEE", "cursor.getColumnIndex()" +cursor.getColumnIndex("Teacher_Name"));
-        // cursor.getString(cursor.getColumnIndexOrThrow(  "Teacher_Name"));
+        Cursor cursorTeacherName = db.rawQuery("SELECT Teacher_Name FROM Accounts WHERE Username=? AND Password=?",selectionArgs);
 
-        TeacherName = cursor.toString();
+        int index;
+        String TeacherName = new String();
 
-        cursor.close();
-        close();
-        return TeacherName;
+        while(cursorTeacherName.moveToNext()) {
+            index = cursorTeacherName.getColumnIndex("Teacher_Name");
+            TeacherName = cursorTeacherName.getString(index);
+        }
+        return  TeacherName;
+    }
+
+    public String getLectureName(String LectureDay , String LectureTime , String TeacherName){
+
+        db = openDatabase();
+        String[] selectionArgs = {LectureDay,LectureTime,TeacherName};
+        String LectureName ="---------------";
+
+        Cursor cursorLectureName = db.rawQuery("SELECT Lecture_Name " +
+                "FROM ((Schedule INNER JOIN Lectures ON Schedule.Sch_Lec_ID = Lectures.Lectures_ID) " +
+                "INNER JOIN Accounts ON Schedule.Sch_Account_ID = Accounts.Accounts_ID) " +
+                "WHERE Lecture_Day=? AND Lecture_Time=? AND Teacher_Name=? " +
+                "GROUP BY Lecture_Time",selectionArgs);
+
+
+        while(cursorLectureName.moveToNext()){
+            int index = cursorLectureName.getColumnIndex("Lecture_Name");
+            LectureName = cursorLectureName.getString(index);
+        }
+
+        Log.e("SELAMLARSELAMLARSELAMLAR" , LectureDay+" "+LectureTime+" "+TeacherName+" "+LectureName);
+
+        return LectureName;
+    }
+
+    public String[] getLectures(String TeacherName){
+
+        db = openDatabase();
+        int i;
+
+        String[] selectionArgs = {TeacherName};
+        String[] Lectures = new String[6];
+
+        for(i=0;i<6;i++)
+            Lectures[i] = "----------";
+
+        i=0;
+
+        Cursor cursorLectures = db.rawQuery("SELECT Lecture_Name " +
+                "FROM ((Schedule INNER JOIN Lectures ON Schedule.Sch_Lec_ID = Lectures.Lectures_ID) " +
+                "INNER JOIN Accounts ON Schedule.Sch_Account_ID = Accounts.Accounts_ID) " +
+                "WHERE Teacher_Name=? " +
+                "GROUP BY Lecture_Name",selectionArgs);
+
+        while(cursorLectures.moveToNext()){
+            int index = cursorLectures.getColumnIndex("Lecture_Name");
+            Lectures[i] = cursorLectures.getString(index);
+            i++;
+        }
+
+        return Lectures;
     }
 }

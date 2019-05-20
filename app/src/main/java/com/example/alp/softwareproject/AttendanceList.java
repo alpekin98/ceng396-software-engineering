@@ -9,7 +9,6 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -43,7 +42,6 @@ public class AttendanceList extends AppCompatActivity {
             public void onClick(View view) {
                 spinnerItem = String.valueOf(spinner.getSelectedItem());
                 Filter[0] = spinnerItem;
-                Log.e("BURASI TAM OLARAK ONCLICK FONKSİYONUNUN İÇERİSİ" ,"   " + spinnerItem + "   " + Filter[0]);
                 getAllItems(Filter);
                 mAdapter.swapCursor(getAllItems(Filter));
             }

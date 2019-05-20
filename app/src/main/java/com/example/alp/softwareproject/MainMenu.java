@@ -14,6 +14,7 @@ public class MainMenu extends AppCompatActivity {
     Button btnTeacherInfo;
     Button btnAttendanceList;
     TextView tvTeacherName;
+    String TeacherName = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class MainMenu extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         String username = null;
-        String TeacherName = null;
+
         if(extras!=null){
             username = extras.getString("Username");
             TeacherName = extras.getString("TeacherName");
@@ -70,6 +71,7 @@ public class MainMenu extends AppCompatActivity {
 
     public void openTeacherInfo(){
         Intent intent = new Intent(this,TeacherInfo.class);
+        intent.putExtra("TeacherName" , TeacherName);
         startActivity(intent);
     }
 
