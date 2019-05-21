@@ -51,6 +51,7 @@ public class MainActivity extends Activity{
 
     private TextView mTextView;
     private NfcAdapter mNfcAdapter;
+    String TeacherName;
 
     private Spinner spinner;
 
@@ -63,6 +64,9 @@ public class MainActivity extends Activity{
         setContentView(R.layout.activity_main);
 
         spinner = findViewById(R.id.SpinnerLecture);
+
+        Bundle extras = getIntent().getExtras();
+        TeacherName = extras.getString("TeacherName");
 
         /** ATTENDANCE RECYCLER VIEW ŞEYSİ */
         /** ATTENDANCE RECYCLER VIEW ŞEYSİ */
@@ -334,6 +338,8 @@ public class MainActivity extends Activity{
     }
 
     private void returnMainMenu(){
+        Log.e("SELAMLARSELAMLARSELAMLAR" , ProjectEntry2.COLUMN_ATTENDANCE_ID );
+
         mDatabase.execSQL("INSERT INTO " + ProjectContract.ProjectEntry2.TABLE_NAME_2 + "(" +
                 ProjectContract.ProjectEntry2.COLUMN_ATTENDANCE_ID + "," +
                 ProjectContract.ProjectEntry2.COLUMN_ATT_STUDENT_INFO + "," +
@@ -341,14 +347,17 @@ public class MainActivity extends Activity{
                 ProjectContract.ProjectEntry2.COLUMN_ATT_LECTURE_CODE + ") SELECT "+
                 ProjectContract.ProjectEntry.COLUMN_DEMO_ID + ", " +
                 ProjectContract.ProjectEntry.COLUMN_DEMO_STUDENT_INFO + ", " +
-                ProjectContract.ProjectEntry.COLUMN_DEMO_DATE + ", " +
+                "datetime(" + ProjectEntry.COLUMN_DEMO_DATE + ", 'localtime'),  " +
                 ProjectContract.ProjectEntry.COLUMN_DEMO_LECTURE_CODE + " FROM " +
                 ProjectContract.ProjectEntry.TABLE_NAME + ";"
         );
 
+
+
         mDatabase.execSQL("DELETE FROM " + ProjectContract.ProjectEntry.TABLE_NAME);
 
         Intent intent = new Intent(this,MainMenu.class);
+        intent.putExtra("TeacherName2",TeacherName);
         startActivity(intent);
     }
 }

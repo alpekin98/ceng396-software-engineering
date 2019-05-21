@@ -54,7 +54,6 @@ public class LoginScreen extends AppCompatActivity {
 
                 if(isExist){
                     Intent intent = new Intent(LoginScreen.this,MainMenu.class);
-                    intent.putExtra("Username" , Username);
                     intent.putExtra("TeacherName" , TeacherName);
                     startActivity(intent);
                 }else{
